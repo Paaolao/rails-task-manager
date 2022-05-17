@@ -1,0 +1,14 @@
+<h1>My tasks</h1>
+<br>
+<ul class="list-group">
+  <% @tasks.each do |task| %>
+  <div class="input-group-text">
+    <input type="checkbox" aria-label="Checkbox for following text input">
+    <li class="list-group-item d-flex justify-content-between align-items-center badge badge-light"><%= link_to task.title, task_path(task) %></li>
+  </div>
+  <% end %>
+</ul>
+
+<%= link_to tasks_new_path, class:"btn btn-light" do %>
+<i class="fa-solid fa-square-plus"></i>
+<% end %>
